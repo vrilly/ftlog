@@ -1,0 +1,4 @@
+ftlog
+
+A simple logging system for my 42 projects
+Uses libft & ft_printf
