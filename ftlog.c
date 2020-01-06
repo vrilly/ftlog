@@ -6,7 +6,7 @@
 /*   By: tjans <tjans@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/06 19:21:31 by tjans         #+#    #+#                 */
-/*   Updated: 2020/01/06 19:36:06 by tjans         ########   odam.nl         */
+/*   Updated: 2020/01/06 19:41:40 by tjans         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	g_logger_enabled = 0;
 const char	*g_log_level_str[3] = { "INFO", "WARN", "ERROR" };
-const char	*fmt_str = "[%s] %s\n";
+const char	*g_fmt_str = "[%s] %s\n";
 
 void	ftlog_init(int logger_enabled)
 {
@@ -26,5 +26,5 @@ void	ftlog(enum e_loglevel log_level, char *logmessage)
 {
 	if (!g_logger_enabled && log_level != LOG_ERROR)
 		return ;
-	ft_printf(fmt_str, g_log_level_str[log_level], logmessage);
+	ft_printf(g_fmt_str, g_log_level_str[log_level], logmessage);
 }
